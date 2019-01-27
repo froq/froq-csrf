@@ -55,7 +55,7 @@ final class Csrf
      * @param  string $token
      * @return void
      */
-    public final function setToken(string $token): void
+    public function setToken(string $token): void
     {
         $this->token = $token;
     }
@@ -64,7 +64,7 @@ final class Csrf
      * Get token.
      * @return ?string
      */
-    public final function getToken(): ?string
+    public function getToken(): ?string
     {
         return $this->token;
     }
