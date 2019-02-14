@@ -24,14 +24,14 @@
  */
 declare(strict_types=1);
 
-namespace Froq\Csrf;
+namespace froq\csrf;
 
 /**
- * @package    Froq
- * @subpackage Froq\Csrf
- * @object     Froq\Csrf\Csrf
- * @author     Kerem Güneş <k-gun@mail.com>
- * @since      3.0
+ * Csrf.
+ * @package froq\csrf
+ * @object  froq\csrf\Csrf
+ * @author  Kerem Güneş <k-gun@mail.com>
+ * @since   3.0
  */
 final class Csrf
 {
@@ -73,7 +73,7 @@ final class Csrf
      * Validate token.
      * @param  ?string $token
      * @return bool
-     * @throws Froq\Csrf\CsrfException
+     * @throws froq\csrf\CsrfException
      */
     public function validateToken(?string $token): bool
     {

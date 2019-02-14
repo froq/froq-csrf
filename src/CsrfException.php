@@ -24,14 +24,14 @@
  */
 declare(strict_types=1);
 
-namespace Froq\Csrf;
+namespace froq\csrf;
 
 /**
- * @package    Froq
- * @subpackage Froq\Csrf
- * @object     Froq\Csrf\CsrfException
- * @author     Kerem Güneş <k-gun@mail.com>
- * @since      3.0
+ * Csrf Exception.
+ * @package froq\csrf
+ * @object  froq\csrf\CsrfException
+ * @author  Kerem Güneş <k-gun@mail.com>
+ * @since   3.0
  */
 final class CsrfException extends \Exception
 {}
