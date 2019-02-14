@@ -27,7 +27,7 @@ declare(strict_types=1);
 namespace froq\csrf;
 
 /**
- * Csrf Exception.
+ * Csrf exception.
  * @package froq\csrf
  * @object  froq\csrf\CsrfException
  * @author  Kerem Güneş <k-gun@mail.com>
