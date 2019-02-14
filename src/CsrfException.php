@@ -26,8 +26,6 @@ declare(strict_types=1);
 
 namespace froq\csrf;
 
-use froq\exception\Exception;
-
 /**
  * Csrf exception.
  * @package froq\csrf
@@ -35,5 +33,5 @@ use froq\exception\Exception;
  * @author  Kerem Güneş <k-gun@mail.com>
  * @since   3.0
  */
-final class CsrfException extends Exception
+final class CsrfException extends \Exception
 {}
