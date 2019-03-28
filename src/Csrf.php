@@ -81,7 +81,7 @@ final class Csrf
             throw new CsrfException('Csrf object has no token, set token first before validation');
         }
 
-        return $token && $token === $this->token;
+        return $token && hash_equals($token, $this->token);
     }
 
     /**
@@ -92,7 +92,7 @@ final class Csrf
      */
     public static function validateTokens(?string $token1, ?string $token2): bool
     {
-        return $token1 && $token2 && $token1 === $token2;
+        return $token1 && $token2 && hash_equals($token1, $token2);
     }
 
     /**
