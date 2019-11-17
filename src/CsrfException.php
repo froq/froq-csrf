@@ -26,12 +26,14 @@ declare(strict_types=1);
 
 namespace froq\csrf;
 
+use froq\Exception;
+
 /**
- * Csrf exception.
+ * Csrf Exception.
  * @package froq\csrf
  * @object  froq\csrf\CsrfException
  * @author  Kerem Güneş <k-gun@mail.com>
  * @since   3.0
  */
-final class CsrfException extends \Exception
+final class CsrfException extends Exception
 {}

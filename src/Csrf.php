@@ -26,6 +26,8 @@ declare(strict_types=1);
 
 namespace froq\csrf;
 
+use froq\csrf\CsrfException;
+
 /**
  * Csrf.
  * @package froq\csrf
@@ -39,7 +41,7 @@ final class Csrf
      * Token.
      * @var string
      */
-    private $token;
+    private string $token;
 
     /**
      * Constructor.
@@ -53,11 +55,13 @@ final class Csrf
     /**
      * Set token.
      * @param  string $token
-     * @return void
+     * @return self
      */
-    public function setToken(string $token): void
+    public function setToken(string $token): self
     {
         $this->token = $token;
+
+        return $this;
     }
 
     /**
@@ -66,7 +70,7 @@ final class Csrf
      */
     public function getToken(): ?string
     {
-        return $this->token;
+        return ($this->token ?? null);
     }
 
     /**
@@ -78,7 +82,8 @@ final class Csrf
     public function validateToken(?string $token): bool
     {
         if ($this->token == null) {
-            throw new CsrfException('Csrf object has no token, set token first before validation');
+            throw new CsrfException('Csrf object has no token yet, set token first before '.
+                'validation');
         }
 
         return $token && hash_equals($token, $this->token);
@@ -101,6 +106,6 @@ final class Csrf
      */
     public static function generateToken(): string
     {
-        return sha1(random_bytes(20)); // sha1(40/2=20)
+        return hash('md5', random_bytes(16));
     }
 }
