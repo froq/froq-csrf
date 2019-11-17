@@ -1,7 +1,7 @@
 {
     "name": "froq/froq-csrf",
     "homepage": "https://github.com/froq/froq-csrf",
-    "description": "CSRF module for Froq!",
+    "description": "Froq! Csrf.",
     "keywords": ["froq", "csrf"],
     "license": "MIT",
     "authors": [
