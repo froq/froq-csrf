@@ -70,23 +70,25 @@ final class Csrf
      */
     public function getToken(): ?string
     {
-        return ($this->token ?? null);
+        return $this->token ?? null;
     }
 
     /**
-     * Validate token.
+     * Validate.
      * @param  ?string $token
      * @return bool
      * @throws froq\csrf\CsrfException
      */
-    public function validateToken(?string $token): bool
+    public function validate(?string $token): bool
     {
-        if ($this->token == null) {
+        $thisToken = $this->getToken();
+
+        if ($thisToken == null) {
             throw new CsrfException('Csrf object has no token yet, set token first before '.
                 'validation');
         }
 
-        return $token && hash_equals($token, $this->token);
+        return self::validateTokens($token, $thisToken);
     }
 
     /**
