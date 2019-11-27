@@ -108,6 +108,6 @@ final class Csrf
      */
     public static function generateToken(): string
     {
-        return hash('md5', random_bytes(16));
+        return md5(random_bytes(20));
     }
 }
