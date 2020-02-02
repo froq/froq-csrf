@@ -85,7 +85,7 @@ final class Csrf
 
         if ($thisToken == null) {
             throw new CsrfException('Csrf object has no token yet, set token first before '.
-                'validation');
+                'validation calling setToken()');
         }
 
         return self::validateTokens($token, $thisToken);
@@ -108,6 +108,6 @@ final class Csrf
      */
     public static function generateToken(): string
     {
-        return md5(random_bytes(20));
+        return sha1(random_bytes(20));
     }
 }
