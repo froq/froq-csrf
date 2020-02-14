@@ -84,8 +84,8 @@ final class Csrf
         $thisToken = $this->getToken();
 
         if ($thisToken == null) {
-            throw new CsrfException('Csrf object has no token yet, set token first before '.
-                'validation calling setToken()');
+            throw new CsrfException('Csrf object has no token yet, set token first calling '.
+                'setToken() before validation');
         }
 
         return self::validateTokens($token, $thisToken);
